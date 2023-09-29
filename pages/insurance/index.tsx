@@ -2,12 +2,7 @@
 import { Fragment, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 
-import {
- ArrowTrendingUpIcon,
- Bars3Icon,
- UserCircleIcon,
- UserGroupIcon,
-} from '@heroicons/react/24/outline';
+import { ArrowTrendingUpIcon, UserCircleIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Image from 'next/image';
 import logoImage from '../../public/logo.svg';
@@ -64,7 +59,7 @@ const clients = [
 ];
 
 const navigation = [
- { name: 'Requests', icon: UserGroupIcon, current: false },
+ { name: 'Requests', icon: UserGroupIcon, current: true },
  { name: 'Offerings', icon: ArrowTrendingUpIcon, current: false },
 ];
 
@@ -130,8 +125,6 @@ function classNames(...classes) {
 }
 
 const Insurance = () => {
- const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
  const [sidebarState, setSidebarState] = useState({
   name: 'Requests',
   icon: UserGroupIcon,
@@ -143,10 +136,6 @@ const Insurance = () => {
    <header className="sticky top-0 z-50 flex h-16 border-b border-gray-900/10 bg-white">
     <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
      <div className="flex flex-1 items-center gap-x-6">
-      <button type="button" className="-m-3 p-3 md:hidden" onClick={() => setMobileMenuOpen(true)}>
-       <span className="sr-only">Open main menu</span>
-       <Bars3Icon className="h-5 w-5 text-gray-900" aria-hidden="true" />
-      </button>
       <Image className="h-8 w-auto" height={32} layout="fixed" src={logoImage} alt="Your Company" />
       <p className="text-blue-700 text-2xl font-bold">
        Interewest United<span className="text-2xl text-gray-700 font-semibold"> Insurance</span>

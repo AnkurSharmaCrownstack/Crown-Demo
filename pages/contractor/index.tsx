@@ -1,14 +1,14 @@
 import { Fragment, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ArrowTrendingUpIcon, UserCircleIcon, UserGroupIcon } from '@heroicons/react/24/outline';
-import { Bars3Icon, DocumentTextIcon } from '@heroicons/react/20/solid';
+import { DocumentTextIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 import Image from 'next/image';
 import logoImage from '../../public/logo.svg';
 import glassImage from '../../public/glassImage.png';
 
 const navigation = [
- { name: 'Insurances & Certificates', icon: UserGroupIcon, current: false },
+ { name: 'Insurances & Certificates', icon: UserGroupIcon, current: true },
  { name: 'Buy Insurance', icon: ArrowTrendingUpIcon, current: false },
 ];
 
@@ -97,7 +97,6 @@ function classNames(...classes) {
 }
 
 const Contractor = () => {
- const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
  const [sidebarState, setSidebarState] = useState({
   name: 'Insurances & Certificates',
   icon: UserGroupIcon,
@@ -109,10 +108,6 @@ const Contractor = () => {
    <header className="sticky top-0 z-50 flex h-16 border-b border-gray-900/10 bg-white">
     <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
      <div className="flex flex-1 items-center gap-x-6">
-      <button type="button" className="-m-3 p-3 md:hidden" onClick={() => setMobileMenuOpen(true)}>
-       <span className="sr-only">Open main menu</span>
-       <Bars3Icon className="h-5 w-5 text-gray-900" aria-hidden="true" />
-      </button>
       <Image className="h-8 w-auto" height={32} layout="fixed" src={logoImage} alt="Your Company" />
       <p className="text-blue-700 text-2xl font-bold">
        Glass<span className="text-2xl text-gray-700 font-semibold"> Contractor</span>
@@ -188,7 +183,6 @@ const Contractor = () => {
    {/* 3 column wrapper */}
    {sidebarState.name === 'Insurances & Certificates' ? (
     <div className="mx-auto w-full flex">
-     {/* Left sidebar & main wrapper */}
      <div className="flex-1 flex">
       <div className="px-6 md-px-8 py-8">
        <nav aria-label="Sidebar" className="top-4">
@@ -203,8 +197,8 @@ const Contractor = () => {
              : 'text-gray-700 hover:bg-gray-100',
             'group w-full flex items-center rounded-md px-3 py-2 text-sm font-medium',
            )}
-           // aria-current={sidebarState.name === item.name ? 'page' : undefined}
           >
+           <>{console.log('My items', item)}</>
            <item.icon
             className={classNames(
              sidebarState.name === item.name
@@ -212,7 +206,6 @@ const Contractor = () => {
               : 'text-gray-400 group-hover:text-gray-500',
              '-ml-1 mr-3 h-6 w-6 flex-shrink-0',
             )}
-            //  aria-hidden="true"
            />
            <span className="truncate">{item.name}</span>
           </button>
@@ -227,7 +220,6 @@ const Contractor = () => {
          Insurances & Certificates
         </h1>
        </header>
-       {/* Deployment list */}
 
        <section aria-labelledby="products-heading" className="my-6">
         <h2 id="products-heading" className="sr-only">
@@ -239,7 +231,6 @@ const Contractor = () => {
           <a key={product.id} href={product.href} className="group ">
            <div className="overflow-hidden rounded-lg">
             <Image src={product.imageSrc} alt={product.imageAlt} />
-            {/* <img className="h-full object-contain group-hover:opacity-75" /> */}
            </div>
            <div className="mt-4 flex items-center justify-between text-base font-medium text-gray-900">
             <h3>{product.name}</h3>
