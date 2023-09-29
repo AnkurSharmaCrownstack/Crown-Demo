@@ -99,7 +99,6 @@ function classNames(...classes) {
 }
 
 export default function Example() {
- const [sidebarOpen, setSidebarOpen] = useState(false);
  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
  const [sidebarState, setSidebarState] = useState({
   name: 'Insurances & Certificates',
