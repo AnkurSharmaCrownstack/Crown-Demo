@@ -1,3 +1,4 @@
+'use client';
 import { Fragment, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 
@@ -8,7 +9,8 @@ import {
  UserGroupIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-
+import Image from 'next/image';
+import logoImage from '../../public/logo.svg';
 const clients = [
  {
   id: 1,
@@ -146,9 +148,11 @@ export default function Example() {
         <span className="sr-only">Open main menu</span>
         <Bars3Icon className="h-5 w-5 text-gray-900" aria-hidden="true" />
        </button>
-       <img
+       <Image
         className="h-8 w-auto"
-        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+        height={32}
+        layout="fixed"
+        src={logoImage}
         alt="Your Company"
        />
        <p className="text-blue-700 text-2xl font-bold">

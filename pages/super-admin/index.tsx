@@ -1,11 +1,13 @@
+'use client';
+
 import { Fragment, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/20/solid';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
 import React from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
-
+import Image from 'next/image';
+import logoImage from '../../public/logo.svg';
 const stats = [
  { name: 'Total Contractors', value: '18' },
  { name: 'Insurances Companies', value: '10' },
@@ -90,11 +92,7 @@ export default function Example() {
        <span className="sr-only">Open main menu</span>
        <Bars3Icon className="h-5 w-5 text-gray-900" aria-hidden="true" />
       </button>
-      <img
-       className="h-8 w-auto"
-       src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-       alt="Your Company"
-      />
+      <Image className="h-8 w-auto" height={32} layout="fixed" src={logoImage} alt="Your Company" />
       <p className="text-blue-700 text-2xl font-bold">
        Go<span className="text-2xl text-gray-700 font-semibold">Tasker</span>
       </p>
