@@ -96,7 +96,7 @@ function classNames(...classes) {
  return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+const Contractor = () => {
  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
  const [sidebarState, setSidebarState] = useState({
   name: 'Insurances & Certificates',
@@ -708,4 +708,6 @@ export default function Example() {
    )}
   </div>
  );
-}
+};
+
+export default Contractor;

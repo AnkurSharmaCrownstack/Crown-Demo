@@ -80,11 +80,11 @@ function classNames(...classes) {
  return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+const SuperAdmin = () => {
  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
  return (
-  <>
+  <div>
    <header className="sticky top-0 z-50 flex h-16 border-b border-gray-900/10 bg-white">
     <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
      <div className="flex flex-1 items-center gap-x-6">
@@ -277,6 +277,7 @@ export default function Example() {
      </div>
     </div>
    </main>
-  </>
+  </div>
  );
-}
+};
+export default SuperAdmin;
